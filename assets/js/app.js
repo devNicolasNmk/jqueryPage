@@ -1,7 +1,7 @@
 $(function () {
     let mainMenuItems = $("#main-menu ul").children("li"),
         totalMainMenuItems = mainMenuItems.length,
-        openedIndex = 2; // -1 => menu fermé
+        openedIndex = 2; // animation de depart 
 
     let init = function () {
         bindEvents();
@@ -17,7 +17,7 @@ $(function () {
                 item = mainMenuItems.eq(newIndex);
             if (openedIndex == newIndex) {
                 animateItem(item, false, 250);
-                openedIndex = -1;
+                openedIndex = -1;// menu fermé
             } else {
                 if (validIndex(newIndex)) {
                     animateItem(mainMenuItems.eq(openedIndex), false, 250);
