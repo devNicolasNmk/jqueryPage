@@ -10,7 +10,7 @@ ol {
 }
 
 body {
-    background: #bfbfbf url("/assets/img/background.jpg") repeat-x;
+    background: #bfbfbf url("https://devnicolasnmk.github.io/jquerypage/assets/img/background.jpg") repeat-x;
     font-family: Arial, sans-serif;
 }
 
@@ -51,7 +51,7 @@ header h1 {
     width: 140px;
     height: 500px;
     cursor: pointer;
-    background: url("/assets/img/image-all.jpg") no-repeat;
+    background: url("https://devnicolasnmk.github.io/jquerypage/assets/img/image-all.jpg") no-repeat;
     opacity: 0.7;
 }
 
@@ -61,7 +61,7 @@ header h1 {
     width: 140px;
     height: 500px;
     cursor: pointer;
-    background: url("/assets/img/image-all-color.jpg") no-repeat;
+    background: url("https://devnicolasnmk.github.io/jquerypage/assets/img/image-all-color.jpg") no-repeat;
 }
 
 #part2 div {
