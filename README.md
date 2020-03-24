@@ -9,3 +9,5 @@ Page web utilisant jQuery
 ## ajout jquery ouverture et fermeture des images
 
 ## ajout html et css buttons
+
+## ajout jQuery buttons

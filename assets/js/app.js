@@ -5,29 +5,24 @@ $(function () {
 
     let init = function () {
         bindEvents();
-        if(validIndex(openedIndex)){
+        if (validIndex(openedIndex)) {
             animateItem(mainMenuItems.eq(openedIndex), true, 700);
         }
     };
-    
-    bindEvents = function(){
+
+    bindEvents = function () {
         mainMenuItems.children(".images").click(function () {
 
-            let newIndex = $(this).parent().index(), //recupere l'index cliqué
-                item = mainMenuItems.eq(newIndex);
-            if (openedIndex == newIndex) {
-                animateItem(item, false, 250);
-                openedIndex = -1;// menu fermé
-            } else {
-                if (validIndex(newIndex)) {
-                    animateItem(mainMenuItems.eq(openedIndex), false, 250);
-                    openedIndex = newIndex;
-                    animateItem(item, true, 250);
-                }
-                animateItem(item, true, 250);
-            }
+            let newIndex = $(this).parent().index(); //recupere l'index cliqué
+            checkAndAnimateItem(newIndex);
+
 
         });
+        $('.button').click(function () {
+            let newIndex = $(this).index();
+            checkAndAnimateItem(newIndex)
+
+        })
     }
 
     let validIndex = function (indexToCheck) {
@@ -50,6 +45,23 @@ $(function () {
         //affiche l'image en couleur
         colorImage.animate(colorImageParam, speed);
         item.animate(itemParam, speed);
+    };
+
+    /**
+     * gere la fermeture ou l'ouverture
+     */
+    let checkAndAnimateItem = function (indexToAnimate) {
+        if (openedIndex == indexToAnimate) {
+            animateItem(mainMenuItems.eq(indexToAnimate), false, 250);
+            openedIndex = -1; // menu fermé
+        } else {
+            if (validIndex(indexToAnimate)) {
+                animateItem(mainMenuItems.eq(openedIndex), false, 250);
+                openedIndex = indexToAnimate;
+                animateItem(mainMenuItems.eq(openedIndex), true, 250);
+            }
+        }
+
     };
 
     init();
